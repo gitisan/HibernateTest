@@ -12,6 +12,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.hibernate.po.Grade;
 import com.hibernate.po.Student;
 
 public class StudentTest {
@@ -48,12 +49,29 @@ public class StudentTest {
 	public void testSaveStudent() {
 		//生成学生对象
 		Student student = new Student();
-		student.setSid(1);
-		student.setSname("张三");
+		student.setSid(2);
+		student.setSname("张三1");
 		student.setBirthday(new Date());
 		student.setAddress("上海道");
 		//保存对象进入数据库
 		session.save(student);
+	}
+	
+	@Test
+	public void testSaveGrade() {
+		Grade grade = new Grade("高三一班1");
+		Student s = new Student("张三23", new Date(), "wwww");
+		grade.getStudent().add(s);
+		s.setGrade(grade);
+		session.save(grade);
+		session.save(s);
+	}
+	
+	@Test
+	public void testfindGrade() {
+		//生成学生对象
+		Grade g =(Grade)session.get(Grade.class, 4);
+		System.out.println(g);
 	}
 
 }

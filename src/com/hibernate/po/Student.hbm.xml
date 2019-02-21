@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2019-2-19 22:45:07 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 2019-2-21 21:28:10 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.hibernate.po.Student" table="STUDENT">
         <id name="sid" type="java.lang.Integer">
             <column name="SID" />
-            <generator class="assigned" />
+            <generator class="native" />
         </id>
         <property name="sname" type="java.lang.String">
             <column name="SNAME" />
@@ -17,5 +17,6 @@
         <property name="address" type="java.lang.String">
             <column name="ADDRESS" />
         </property>
+        <many-to-one name="grade" class="com.hibernate.po.Grade" column="IIIOD"></many-to-one>
     </class>
 </hibernate-mapping>

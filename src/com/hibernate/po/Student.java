@@ -12,6 +12,18 @@ public class Student {
 	private String sname;
 	private Date birthday;
 	private String address;
+	private Grade grade;
+	
+	
+	public Student() {
+		super();
+	}
+	public Student(String sname, Date birthday, String address) {
+		super();
+		this.sname = sname;
+		this.birthday = birthday;
+		this.address = address;
+	}
 	public Integer getSid() {
 		return sid;
 	}
@@ -35,6 +47,12 @@ public class Student {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public Grade getGrade() {
+		return grade;
+	}
+	public void setGrade(Grade grade) {
+		this.grade = grade;
 	}
 	
 	

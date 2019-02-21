@@ -12,8 +12,9 @@
     	
     	<property name="show_sql">true</property>
     	<property name="format_sql"></property>
-    	<property name="hbm2ddl.auto">create</property>
+    	<property name="hbm2ddl.auto">update</property>
     	
     	<mapping  resource="com/hibernate/po/Student.hbm.xml"/>
+    	<mapping  resource="com/hibernate/po/Grade.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
